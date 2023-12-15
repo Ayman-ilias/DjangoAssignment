@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="row mx-auto" style="margin-top: 20px;">
+  {% for i in data %}
+    <div class="col-md-4 mb-4">
+        <div class="card" style="width: 22rem; max-height: 50rem; overflow: hidden;">
+        <img src="{{i.strCategoryThumb}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{i.strCategory}}</h5>
+          <p class="card-text">{{i.strCategoryDescription | truncatewords:10}}</p>
+          <a href="#" class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
